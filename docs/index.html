@@ -81,13 +81,15 @@
   <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
   <script>
     const gitalk = new Gitalk({
+      id: location.pathname,
       clientID: 'df68a524b74c916421bd',
       clientSecret: '5d5267491ee9cdf565864242dc956b90407e1bfe',
       repo: 'Gitalk-docsify',
       owner: 'WhyLIM',
       admin: ['WhyLIM'],
       // facebook-like distraction free mode
-      distractionFreeMode: false
+      distractionFreeMode: false,
+      title: 'DocsifyComment',
     })
   </script>
 </body>
