@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+    <!-- Font Awesome 矢量图标 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.2/css/all.css" rel="stylesheet">
 </head>
+
 <body>
-  <div id="app"></div>
-  <!-- <script>
+    <div id="app"></div>
+    <!-- <script>
     window.$docsify = {
       name: '',
       repo: '',
@@ -20,79 +24,93 @@
       loadNavbar: true,
     }
   </script> -->
-  <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
-  <script>
-    window.$docsify = {
-      name: '',
-      repo: '',
-      loadSidebar: true,
-      subMaxLevel: 5,
-      loadNavbar: true,
-      search: 'auto', // 默认值
-      search : [
-        '/',            // => /README.md
-        '/ChIP-Seq',       // => /ChIP-Seq.md
-        '/Drug-Virtual-Screening', // => /Drug-Virtual-Screening.md
-        '/Drug-Repurposion',      // => /Drug-Repurposion.md
-        '/Computational-Antibody-Design', // => /Computational-Antibody-Design.md
-      ],
-      // 完整配置参数
-      search: {
-        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-        paths: [], // or 'auto'
-        placeholder: 'Type to search',
-        // 支持本地化
-        placeholder: {
-          '/zh-cn/': '搜索',
-          '/': 'Type to search'
-        },
-        noData: 'No Results!',
-        // 支持本地化
-        noData: {
-          '/zh-cn/': '找不到结果',
-          '/': 'No Results'
-        },
-        // 搜索标题的最大层级, 1 - 6
-        depth: 3,
-        hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
-        // 避免搜索索引冲突
-        // 同一域下的多个网站之间
-        namespace: 'website-1',
-        // 使用不同的索引作为路径前缀（namespaces）
-        // 注意：仅适用于 paths: 'auto' 模式
-        //
-        // 初始化索引时，我们从侧边栏查找第一个路径
-        // 如果它与列表中的前缀匹配，我们将切换到相应的索引
-        pathNamespaces: ['/zh-cn', '/ru-ru', '/ru-ru/v1'],
-        // 您可以提供一个正则表达式来匹配前缀。在这种情况下，
-        // 匹配到的字符串将被用来识别索引
-        pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/,
-      }
-    }
-  </script>
-  <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script> -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
-  <script>
-    const gitalk = new Gitalk({
-      id: location.pathname,
-      clientID: 'df68a524b74c916421bd',
-      clientSecret: '5d5267491ee9cdf565864242dc956b90407e1bfe',
-      repo: 'Gitalk-docsify',
-      owner: 'WhyLIM',
-      admin: ['WhyLIM'],
-      // facebook-like distraction free mode
-      distractionFreeMode: false,
-      title: 'DocsifyComment',
-    })
-  </script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-r.min.js"></script>
+    <!-- Docsify v4 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+    <script>
+        window.$docsify = {
+            name: '',
+            // 右上角小部件
+            repo:'true', // set the docsify show the corner
+            corner: {
+                // the icon link url to another site  
+                url: "https://github.com/WhyLIM", 
+                // the default preset icon in docsify-corner  
+                icon: "github",
+                background: "black",
+            },
+            loadSidebar: true,
+            subMaxLevel: 5,
+            loadNavbar: true,
+            search: 'auto', // 默认值
+            search: [
+                '/',            // => /README.md
+                '/ChIP-Seq',       // => /ChIP-Seq.md
+                '/Drug-Virtual-Screening', // => /Drug-Virtual-Screening.md
+                '/Drug-Repurposion',      // => /Drug-Repurposion.md
+                '/Computational-Antibody-Design', // => /Computational-Antibody-Design.md
+            ],
+            // 完整配置参数
+            search: {
+                maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+                paths: [], // or 'auto'
+                placeholder: 'Type to search',
+                // 支持本地化
+                placeholder: {
+                    '/zh-cn/': '搜索',
+                    '/': 'Type to search'
+                },
+                noData: 'No Results!',
+                // 支持本地化
+                noData: {
+                    '/zh-cn/': '找不到结果',
+                    '/': 'No Results'
+                },
+                // 搜索标题的最大层级, 1 - 6
+                depth: 3,
+                hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
+                // 避免搜索索引冲突
+                // 同一域下的多个网站之间
+                namespace: 'website-1',
+                // 使用不同的索引作为路径前缀（namespaces）
+                // 注意：仅适用于 paths: 'auto' 模式
+                //
+                // 初始化索引时，我们从侧边栏查找第一个路径
+                // 如果它与列表中的前缀匹配，我们将切换到相应的索引
+                pathNamespaces: ['/zh-cn', '/ru-ru', '/ru-ru/v1'],
+                // 您可以提供一个正则表达式来匹配前缀。在这种情况下，
+                // 匹配到的字符串将被用来识别索引
+                pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/,
+            }
+        }
+    </script>
+    <!-- 数学公式渲染 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
+    <!-- 右上角小部件 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-corner/dist/docsify-corner.min.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script> -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        const gitalk = new Gitalk({
+            id: location.pathname,
+            clientID: 'df68a524b74c916421bd',
+            clientSecret: '5d5267491ee9cdf565864242dc956b90407e1bfe',
+            repo: 'Gitalk-docsify',
+            owner: 'WhyLIM',
+            admin: ['WhyLIM'],
+            // facebook-like distraction free mode
+            distractionFreeMode: false,
+            title: 'DocsifyComment',
+        })
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-r.min.js"></script>
 </body>
+
 </html>
