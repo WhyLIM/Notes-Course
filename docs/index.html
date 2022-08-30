@@ -15,15 +15,6 @@
 
 <body>
     <div id="app"></div>
-    <!-- <script>
-    window.$docsify = {
-      name: '',
-      repo: '',
-      loadSidebar: true,
-      subMaxLevel: 5,
-      loadNavbar: true,
-    }
-  </script> -->
     <!-- Docsify v4 -->
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
@@ -42,25 +33,15 @@
             loadSidebar: true,
             subMaxLevel: 5,
             loadNavbar: true,
-            search: 'auto', // 默认值
-            search: [
-                '/',            // => /README.md
-                '/ChIP-Seq',       // => /ChIP-Seq.md
-                '/Drug-Virtual-Screening', // => /Drug-Virtual-Screening.md
-                '/Drug-Repurposion',      // => /Drug-Repurposion.md
-                '/Computational-Antibody-Design', // => /Computational-Antibody-Design.md
-            ],
-            // 完整配置参数
+            // 完整搜索参数
             search: {
                 maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-                paths: [], // or 'auto'
-                placeholder: 'Type to search',
+                paths: 'auto',
                 // 支持本地化
                 placeholder: {
                     '/zh-cn/': '搜索',
                     '/': 'Type to search'
                 },
-                noData: 'No Results!',
                 // 支持本地化
                 noData: {
                     '/zh-cn/': '找不到结果',
@@ -81,7 +62,23 @@
                 // 您可以提供一个正则表达式来匹配前缀。在这种情况下，
                 // 匹配到的字符串将被用来识别索引
                 pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/,
-            }
+            },
+            // 页脚
+            plugins: [
+                function(hook) {
+                var footer = [
+                    '<hr/>',
+                    '<footer>',
+                    '<p>Copyright &copy; 2022 MLi. All Rights Reserved.</p>',
+                    '<p>Published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.</p>',
+                    '</footer>'
+                ].join('');
+                
+                hook.afterEach(function(html) {
+                    return html + footer;
+                });
+                }
+            ],
         }
     </script>
     <!-- 数学公式渲染 -->
