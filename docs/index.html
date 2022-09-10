@@ -30,6 +30,21 @@
                 icon: "github",
                 background: "black",
             },
+            // 字符统计
+            count: {
+                countable: true,
+                position: 'top',
+                margin: '10px',
+                float: 'right',
+                fontsize: '0.9em',
+                color: 'rgb(90,90,90)',
+                language: 'chinese',
+                localization: {
+                    words: "",
+                    minute: "",
+                },
+                isExpected: true,
+            },
             loadSidebar: true,
             subMaxLevel: 5,
             loadNavbar: true,
@@ -66,30 +81,48 @@
             // 页脚
             plugins: [
                 function(hook) {
-                var footer = [
-                    '<hr/>',
-                    '<footer>',
-                    '<p>Copyright &copy; 2022 MLi. All Rights Reserved.</p>',
-                    '<p>Published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.</p>',
-                    '</footer>'
-                ].join('');
-                
-                hook.afterEach(function(html) {
-                    return html + footer;
-                });
+                    var footer = [
+                        // '<hr/>',
+                        '<footer>',
+                        '<p style="text-align: right;">Copyright &copy; 2022 MLi. All Rights Reserved. Published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.</p>',
+                        '</footer>'
+                    ].join('');
+                    hook.afterEach(function(html) {
+                        return html + footer;
+                    });
                 }
             ],
+            // 分页
+            pagination: {
+                // previousText: '上一章节',
+                // nextText: {
+                    // '/en/': 'NEXT',
+                    // '/': '下一章节'
+                // },
+                crossChapter: true,
+                crossChapterText: true,
+            },
+            // 自动跳转到页面顶部
+            auto2top: true,
         }
     </script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script> -->
     <!-- 数学公式渲染 -->
     <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
-    <!-- 右上角小部件 -->
+    <!-- 增强右上角小部件 -->
     <script src="//cdn.jsdelivr.net/npm/docsify-corner/dist/docsify-corner.min.js"></script>
-    <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script> -->
+    <!-- 字符统计 -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-count@latest/dist/countable.min.js"></script>
+    <!-- 全局搜索 -->
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <!-- emoji -->
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+    <!-- 图片放大 -->
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+    <!-- 显示图片标题 -->
+    <script src="https://unpkg.com/@h-hg/docsify-image-caption/dist/docsify-image-caption.min.js"></script>
+    <!-- 复制代码 -->
     <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
@@ -108,6 +141,8 @@
     </script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-r.min.js"></script>
+    <!-- 分页 -->
+    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
 </body>
 
 </html>
