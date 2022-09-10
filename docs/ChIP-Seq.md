@@ -288,7 +288,7 @@ sudo Rscript macs2_model.r
 
 使用 ChIPseeker 对 peeks 进行注释
 
-详细代码见附录（[chipseeker.R](###4.1-chipseeker.r)）
+详细代码见附录（[chipseeker.R](#41-chipseekerr)）
 
 查看 peaks 在各个染色体上的分布（{@fig:peaks_over_chrs}）
 
